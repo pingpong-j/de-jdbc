@@ -1,4 +1,4 @@
-package org.de.jdbc.crudexample;
+package org.de.jdbc.resultset.pojomapping;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -14,9 +14,7 @@ public class Main {
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery("select `id`, `name`, `updated_at`, `contents`, `price` from product");
             while (rs.next()) {
-                System.out.println(rs.getInt(1) + "  " + rs.getString(2) + "  "
-                                   + rs.getDate(3) + "  " + rs.getString(4)
-                                   + "  " + rs.getInt(5));
+                System.out.println(ResultSetMapper.create(rs));
             }
             con.close();
         } catch (Exception e) {System.out.println(e);}
