@@ -1,4 +1,4 @@
-package org.de.jdbc.resultset.pojomapping;
+package org.de.jdbc.mapper;
 
 import java.time.LocalDateTime;
 
@@ -14,6 +14,34 @@ public class Product {
         this.name = name;
         this.updated_at = updated_at;
         this.contents = contents;
+        this.price = price;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public LocalDateTime getUpdated_at() {
+        return updated_at;
+    }
+
+    public void setUpdated_at(LocalDateTime updated_at) {
+        this.updated_at = updated_at;
+    }
+
+    public String getContents() {
+        return contents;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
         this.price = price;
     }
 
